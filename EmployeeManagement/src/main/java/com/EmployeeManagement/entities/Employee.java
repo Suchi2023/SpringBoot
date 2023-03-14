@@ -12,7 +12,7 @@ public class Employee {
 	@Id
 	@Column(name = "EMP_ID")
 	private int empId;
-	
+
 	@Column(name = "FIRST_NAME")
 	private String firstName;
 	
@@ -24,7 +24,7 @@ public class Employee {
 	
 	@Column(name = "DESIGNATION")
 	private String designation;
-	
+
 	public int getEmpId() {
 		return empId;
 	}
