@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>login form</title>
+</head>
+<body style = "text-align : center">
+      <h1  style = "color:red">Login Form</h1>
+       <form th:action = "@{/process}" method = "post" th:object = "${loginData}">
+           <table height = "250" width = "700" border = "1" align = "center">
+              <tr>
+                 <td><h3>User Name</h3></td>
+                 <td>
+                      <input type = "text" name = "userName"  th:value = "${loginData.userName}" th:classappend = "${#fields.hasErrors('userName') ? 'is-invalid':' '}"/>
+                      <div th:each = "e : ${#fields.errors('userName')}" th:text = "${e}" style = "color:red;font-weight:bold"></div>
+                   </td>
+              </tr>
+              <tr>
+                 <td><h3> Email ID</h3></td>
+                 <td>
+                    <input type = "email" name = "email" th:value = "${loginData.email}" />
+                     <div th:each = "e : ${#fields.errors('email')}" th:text = "${e}" style = "color:red;font-weight:bold"></div>
+                   </td>
+              </tr>
+              <tr>
+                 <td> 
+                     <input type = "checkbox" name = "agreed" th:value = "${loginData.agreed}" /> Must agree terms and licenses.
+                      <div th:each = "e : ${#fields.errors('agreed')}" th:text = "${e}" style = "color:red;font-weight:bold"></div>
+                     </td>
+                 <td> <input type = "submit"  value = "Submit"/></td>
+              </tr>
+           </table>        
+       </form>
+</body>
+</html>
