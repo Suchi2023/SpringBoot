@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang = "en"  xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>subject list</title>
+</head>
+<body>
+      <h1>List of Computer Science Subjects</h1>
+      <h2 th:each = "sub, status : ${subjectList}">
+                 <p th:style = "${status.even} ? 'color:red' : 'color:blue'" th:text = "${status.index + 1} + '. '+${sub}"  ></p>
+       </h2>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>about</title>
+</head>
+<body>
+     <h2 th:text = "${name}"></h2>
+     <h2 th:text = "${currentDate}"></h2>
+     <hr>
+     <h1>We are learning spring boot.</h1>
+     <h2 th:text = "${#strings.toUpperCase(name)}" style = "color:red"></h2>
+     <h2>Length of the string is <span th:text = "${#strings.length(name)}"></span></h2>
+     <hr>
+     <h2>Name of the owner <span th:text = "${owner}" style = "color:green"></span></h2>
+     <hr>
+     <div th:with = "a = 5, b= 6, n = ${owner}">
+         <h2> Value of a is <span th:text = "${a}"  style = "color:orange"></span></h2>
+         <h2> Value of b is <span th:text = "${b}"  style = "color:orange"></span></h2>
+         <h2> Local value of n <span th:text = "${n}"  style = "color:pink"></span></h2>
+          <h2 th:text ="'sum of '  + ${a} + ' and  '  + ${b}  + ' is '  + ${a+b} "></h2>
+     </div>
+</body>
+</html>

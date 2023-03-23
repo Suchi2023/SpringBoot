@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>condition</title>
+</head>
+<body>
+   <h1> User is <span th:style = "${isActive} ? 'color:green' : 'color:red'"  th:text = "${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span></h1>
+   <hr>
+   <h1>Elvis operator example</h1>
+   <h2 th:if = "${gender} == 'M'">Male</h2>
+   <h2 th:unless = "${gender} == 'M'">Female</h2>
+   <hr>
+   <h1>Switch Case Example</h1>
+   <div th:switch = "${#lists.size(mylist)}">
+       <h2 th:case = "0">List contain zero element.</h2>
+       <h2 th:case = "1">List contain one element.</h2>
+       <h2 th:case = "*">List contains more than one element.</h2>
+   </div>
+</body>
+</html>

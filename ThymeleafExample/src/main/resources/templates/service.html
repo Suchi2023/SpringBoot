@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>service</title>
+</head>
+<body>
+         <header id = "headerHostTag"  th:include = "header::header1(${header})"></header>
+         <div id = "contentHostTag" th:insert = "content::content1(${content})"></div>
+         <footer id = "footerHostTag" th:replace= "footer::footer1(${footer})"></footer>
+</body>
+</html>
